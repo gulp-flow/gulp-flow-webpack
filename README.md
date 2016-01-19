@@ -36,8 +36,10 @@ cfg.webpack.entry.main = './src/index.js';
 cfg.webpack.plugins = [
   new webpack.IgnorePlugin(/_[a-z-A-Z0-9-]\//),
   new webpack.DefinePlugin({
-    // JSON: "string", inject the current environment (dev, prod, ...)
-    __ENV: `"${cfg.env}"`
+    // inject the current environment (dev, prod, ...)
+    get __ENV() {
+      return `"${cfg.env}"` // JSON: "string"
+    }
   }),
   new webpack.optimize.DedupePlugin()
 ];
