@@ -22,8 +22,13 @@ By default this bundle is preconfigured in `cfg.webpack`, only the `entry` is re
 
 Example of a common use case:
 
+_tasks/bundles/webpack.js_
 ```js
 let flow = require('gulp-flow');
+
+// load the webpack bundle
+require('gulp-flow-webpack');
+
 let {cfg, webpack} = flow;
 
 cfg.webpack.entry.main = './src/index.js';
@@ -60,10 +65,15 @@ cfg.webpack.module.loaders[0].query.plugins = [
 
 A simple example:
 
+_gulpfile.js_
 ```js
 let gulp = require('gulp');
 let flow = require('gulp-flow');
 let {cfg, gp} = flow;
+
+// load (custom) webpack bundle
+require('./tasks/bundles/webpack');
+
 
 gulp.task('build.webpack', function() {
   return gulp.src(cfg.webpack.entry.main)
