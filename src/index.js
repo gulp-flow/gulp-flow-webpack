@@ -11,10 +11,10 @@
 'use strict';
 
 let flow = require('gulp-flow');
-let {cfg, gp} = flow;
+let {cfg, gp, utils} = flow;
 
-// webpack
-flow.webpack = require('webpack');
+// utils
+utils.webpack = require('webpack');
 
 // gulp plugin
 gp.webpack = require('webpack-stream');

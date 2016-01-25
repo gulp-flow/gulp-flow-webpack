@@ -29,7 +29,8 @@ let flow = require('gulp-flow');
 // load the webpack bundle
 require('gulp-flow-webpack');
 
-let {cfg, webpack} = flow;
+let {cfg, utils} = flow;
+let {webpack} = utils;
 
 cfg.webpack.entry.main = './src/index.js';
 
