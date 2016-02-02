@@ -32,6 +32,17 @@ require('gulp-flow-webpack');
 let {cfg, utils} = flow;
 let {webpack} = utils;
 
+// ignore JS(X) in files tasks
+cfg.files.src.push(
+  '!src/*.{js, jsx}',
+  '!src/**/*.{js, jsx}'
+);
+
+cfg.files.srcWatch.push(
+  '!src/*.{js, jsx}',
+  '!src/**/*.{js, jsx}'
+);
+
 cfg.webpack.entry.main = './src/index.js';
 
 cfg.webpack.plugins = [
