@@ -46,6 +46,7 @@ cfg.webpack = {
   },
 
   module: {
+    preLoaders: [],
     loaders: [
       {
         test: /\.jsx?$/,
