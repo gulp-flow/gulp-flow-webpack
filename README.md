@@ -2,6 +2,8 @@
 
 Webpack bundle for [gulp-flow](https://github.com/gulp-flow/gulp-flow).
 
+See also [gulp-flow-js](https://github.com/gulp-flow/gulp-flow-js).
+
 
 ## Requirements
 
