@@ -1,7 +1,7 @@
 {
   "name": "gulp-flow-webpack",
   "version": "1.0.0",
-  "description": "gulp-flow-webpack bundle for gulp-flow.",
+  "description": "Webpack bundle for gulp-flow.",
   "main": "./src/index.js",
   "keywords": [
     "gulp",
@@ -10,7 +10,9 @@
     "workflow",
     "task",
     "plugin",
-    "bundle"
+    "bundle",
+    "es6",
+    "es7"
   ],
   "homepage": "https://github.com/gulp-flow/gulp-flow-webpack",
   "author": {
