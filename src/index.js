@@ -11,7 +11,8 @@
 'use strict';
 
 let flow = require('gulp-flow');
-let {cfg, gp, utils} = flow;
+let {cfg, gp, utils, envList} = flow;
+
 
 // utils
 utils.webpack = require('webpack');
@@ -24,14 +25,15 @@ cfg.webpack = {
   cache: true,
   debug: true,
   watch: false,
-  devtool: '#eval-source-map',
+  devtool: 'inline-source-map',
 
   entry: {
 
   },
 
   output: {
-    filename: '[name].js'
+    filename: '[name].js',
+    pathinfo: true
   },
 
   resolve: {
@@ -70,3 +72,8 @@ cfg.webpack = {
   },
   plugins: []
 };
+
+if(envList.NODE_ENV === 'production') {
+  cfg.webpack.devtool = false;
+  cfg.webpack.output.pathinfo = false;
+}
