@@ -2,8 +2,6 @@
 
 Webpack bundle for [gulp-flow](https://github.com/gulp-flow/gulp-flow).
 
-See also [gulp-flow-js](https://github.com/gulp-flow/gulp-flow-js).
-
 
 ## Requirements
 
@@ -111,17 +109,16 @@ _gulpfile.js_
 ```js
 let gulp = require('gulp');
 let flow = require('gulp-flow');
-let {cfg, gp, utils, pipes, envList} = flow;
+let {cfg, gp, utils} = flow;
 
 // load (custom) webpack bundle
 require('./tasks/bundles/webpack');
 
 
 // build: JS
-gulp.task('build.js', function() {
+gulp.task('build.js', function buildJS() {
   return gulp.src(cfg.webpack.entry.app)
     .pipe(gp.webpack(cfg.webpack, utils.webpack))
-    .pipe(gp.ifElse(envList.NODE_ENV === 'production', pipes.jsMin))
     .pipe(gulp.dest(cfg.publicJsDir))
   ;
 });
