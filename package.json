@@ -1,6 +1,6 @@
 {
   "name": "gulp-flow-webpack",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Webpack bundle for gulp-flow.",
   "main": "./src/index.js",
   "keywords": [
@@ -45,6 +45,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "core-js": "^2",
     "webpack": "^4.29.6",
     "webpack-stream": "^5.2.1"
   },
