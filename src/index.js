@@ -65,7 +65,7 @@ cfg.webpack = {
                 {
                   useBuiltIns: 'usage',
                   targets: {
-                    browsers: ['last 4 versions', 'safari >= 7']
+                    browsers: ['last 2 versions', 'safari >= 7', 'IE >= 9']
                   },
                 },
               ],
