@@ -11,14 +11,18 @@ Webpack bundle for [gulp-flow](https://github.com/gulp-flow/gulp-flow).
 ## Install
 
 ```sh
-npm install --save-dev gulp-flow-webpack
+npm install --save-dev gulp-flow-webpack @babel/runtime
 ```
 
 or
 
 ```sh
-yarn add --dev gulp-flow-webpack
+yarn add --dev gulp-flow-webpack @babel/runtime
 ```
+
+> @babel/runtime is a production dependency (since it's for the "runtime").
+> The transformation plugin is typically used only in development,
+> but the runtime itself will be depended on by your deployed code.
 
 ## Usage
 
@@ -78,8 +82,9 @@ cfg.webpack.module.rules[0].use.presets = [
     '@babel/preset-env',
     {
       useBuiltIns: 'usage',
+      corejs: 3,
       targets: {
-        browsers: ['last 4 versions', 'safari >= 7']
+        browsers: ['last 2 versions']
       },
     },
   ],
@@ -98,7 +103,8 @@ cfg.webpack.module.rules[0].use.plugins = [
 Or only change a specific config:
 
 ```js
-cfg.webpack.module.rules[0].use.presets[0][1].useBuiltIns = 'entry';
+cfg.webpack.module.rules[0].use.options.presets[0][1].useBuiltIns = 'entry';
+cfg.webpack.module.rules[0].use.options.presets[0][1]['corejs'] = '2';
 ```
 
 ### Task
