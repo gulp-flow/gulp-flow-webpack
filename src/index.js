@@ -5,7 +5,7 @@
  *
  * For the full copyright and license information, please view the LICENSE file
  * distributed with this source code
- * or visit https://github.com/gulp-flow/gulp-flow.
+ * or visit https://github.com/gulp-flow/gulp-flow-webpack.
  */
 
 'use strict';
@@ -69,7 +69,8 @@ cfg.webpack = {
                     browsers: ['last 2 versions', 'safari >= 7', 'IE >= 11']
                   },
                 },
-              ]
+              ],
+              '@babel/preset-react',
             ],
             plugins: [
               '@babel/plugin-transform-runtime',
