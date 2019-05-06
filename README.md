@@ -71,6 +71,8 @@ cfg.webpack.plugins.push(
 cfg.webpack.module.rules[0].include = [
   path.join(rootPath, srcDir + '/app'),
 ];
+
+cfg.webpack.module.rules[0].use.presets.push('@babel/preset-react');
 ```
 
 You can overwrite:
