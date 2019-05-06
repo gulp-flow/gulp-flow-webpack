@@ -33,7 +33,7 @@ By default this bundle is preconfigured in `cfg.webpack`, only the `entry` and t
 Example of a common use case with _React.js_:
 
 ```sh
-yarn add --dev gulp-flow-webpack @babel/runtime @babel/preset-react
+yarn add --dev gulp-flow-webpack @babel/runtime
 ```
 
 _tasks/bundles/webpack.js_
@@ -75,8 +75,6 @@ cfg.webpack.plugins.push(
 cfg.webpack.module.rules[0].include = [
   path.join(rootPath, srcDir + '/app'),
 ];
-
-cfg.webpack.module.rules[0].use.options.presets.push('@babel/preset-react');
 ```
 
 You can overwrite:
@@ -111,6 +109,37 @@ Or only change a specific config:
 ```js
 cfg.webpack.module.rules[0].use.options.presets[0][1].useBuiltIns = 'entry';
 cfg.webpack.module.rules[0].use.options.presets[0][1]['corejs'] = '2';
+```
+
+#### eslint
+
+eslint example:
+
+```json
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "common-react"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "autobind": false,
+    "React": false,
+    "ReactDOM": false
+  },
+  "rules": {
+    "no-return-assign": 0
+  }
+}
 ```
 
 ### Task
