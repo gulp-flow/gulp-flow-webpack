@@ -30,7 +30,11 @@ yarn add --dev gulp-flow-webpack @babel/runtime
 
 By default this bundle is preconfigured in `cfg.webpack`, only the `entry` and the source path are required.
 
-Example of a common use case:
+Example of a common use case with _React.js_:
+
+```sh
+yarn add --dev gulp-flow-webpack @babel/runtime @babel/preset-react
+```
 
 _tasks/bundles/webpack.js_
 ```js
@@ -72,7 +76,7 @@ cfg.webpack.module.rules[0].include = [
   path.join(rootPath, srcDir + '/app'),
 ];
 
-cfg.webpack.module.rules[0].use.presets.push('@babel/preset-react');
+cfg.webpack.module.rules[0].use.options.presets.push('@babel/preset-react');
 ```
 
 You can overwrite:
