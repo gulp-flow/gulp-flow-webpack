@@ -69,8 +69,7 @@ cfg.webpack = {
                     browsers: ['last 2 versions', 'safari >= 7', 'IE >= 11']
                   },
                 },
-              ],
-              '@babel/preset-react',
+              ]
             ],
             plugins: [
               '@babel/plugin-transform-runtime',
